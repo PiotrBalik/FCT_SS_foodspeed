@@ -11,7 +11,7 @@ function varargout = foodspeed(varargin)
 %
 %      FOODSPEED('Property','Value',...) creates a new FOODSPEED or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before foodspeed_OpeningFcn gets called.  An
+%      applied to the GUI before foodspeed_OingFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
 %      stop.  All inputs are passed to foodspeed_OpeningFcn via varargin.
 %
