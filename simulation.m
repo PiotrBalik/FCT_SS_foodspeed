@@ -23,11 +23,11 @@ while ~all(timehot) %temperature threshold, each agent must have specific?
     % change and new temperature
     n=size(agents,1);
 	
-	water = agents(1,:); % first element
-	deltaWater = heat(water,500); %energy from flame
+	water = agents(1,5); % first element
+	deltaWater = heatwater(water,500); %energy from flame
     for line=2:n
 		% simulate effect of every ingredient with water surrounding it
-        [deltaTemp,deltaEnergy] = heat(agents( line, : ), water(5) );
+        [deltaTemp,deltaEnergy] = heat(agents( line, : ), water );
         agents(line,5)=agents(line,5) + deltaTemp;
         
         if agents(line,5) > (98+273) && hot(line-1)==0
@@ -54,8 +54,8 @@ while ~all(timehot) %temperature threshold, each agent must have specific?
 %     legend({'Water','Food'},'Location','southeast')
     
     %difference from heating and effects of ingredients
-    water(5) = water(5)+ heatwater(water(5),deltaWater);
-	agents(1,5) = water(5);
+    water = water + heatwater(water,deltaWater);
+	agents(1,5) = water;
     
     i=i+1;
     
